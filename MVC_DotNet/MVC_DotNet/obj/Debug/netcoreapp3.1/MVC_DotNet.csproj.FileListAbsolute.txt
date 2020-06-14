@@ -10,12 +10,12 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netco
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netcoreapp3.1\MVC_DotNet.Views.dll
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netcoreapp3.1\MVC_DotNet.Views.pdb
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.csprojAssemblyReference.cache
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.AssemblyInfoInputs.cache
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.AssemblyInfo.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.csproj.CoreCompileInputs.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.RazorAssemblyInfo.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.RazorAssemblyInfo.cs
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.AssemblyInfoInputs.cache
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.AssemblyInfo.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.TagHelpers.input.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.TagHelpers.output.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.RazorCoreGenerate.cache
