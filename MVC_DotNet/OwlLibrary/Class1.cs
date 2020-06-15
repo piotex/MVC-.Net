@@ -7,14 +7,15 @@ namespace OwlLibrary
     }
 }
 
-//-- CREATE TABLE books(
-//--   id SERIAL PRIMARY KEY,
-//--   title VARCHAR(100) NOT NULL,
-//--   primary_author VARCHAR(100) NULL
-//-- );
+//CREATE TABLE users(
+//	id SERIAL PRIMARY KEY,
+//	name VARCHAR(10) NOT NULL,
+//	pwd VARCHAR(10) NOT NULL,
+//	email VARCHAR(20) NOT NULL
+//);
 
-//INSERT into books(title, primary_author) values('tytul','autor');
+//INSERT into users(name, pwd, email) values('admin2','1234','pkubon2@gmail.com');
 
-//SELECT* from books;
+//SELECT* from users;
 
-//-- DROP table books;
+//-- DROP table users;

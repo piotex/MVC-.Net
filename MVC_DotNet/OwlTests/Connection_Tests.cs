@@ -5,7 +5,7 @@ using OwlLibrary.Factory;
 
 namespace OwlTests
 {
-    public class Connection
+    public class Connection_Tests
     {
         [SetUp]
         public void Setup()
