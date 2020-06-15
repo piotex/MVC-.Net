@@ -7,6 +7,6 @@ namespace OwlLibrary.Interfaces
 {
     interface Interface_DbConnection
     {
-        int Connect(ref DbConnection connection);
+        int Connect<T>(ref T connection) where T : DbConnection;
     }
 }

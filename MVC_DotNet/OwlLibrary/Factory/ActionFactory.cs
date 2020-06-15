@@ -1,7 +1,9 @@
-﻿using OwlLibrary.Enums;
+﻿using OwlLibrary.Classes.GetData;
+using OwlLibrary.Enums;
 using OwlLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
 
 namespace OwlLibrary.Factory
@@ -12,32 +14,11 @@ namespace OwlLibrary.Factory
         {
             {Enum_Action.SelectAll, new PostgreSQL_selectAll() }
         };
-        public static DbConnection makeConnection(Enum_Db dbType)
+        public static DbConnection makeConnection(Enum_Action actionType)
         {
             DbConnection conn = null;
-            _dic[dbType].Connect(ref conn);
+            _dic[actionType].DoAction();
             return conn;
-
-            try
-            {
-                string sql = "SELECT * FROM users";
-
-                NpgsqlConnection con = conn as NpgsqlConnection;
-                con.Open();
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    string aaaaaaaaa = dr[0].ToString();
-                    string aaaaaaaaa4 = dr[1].ToString();
-                    string aaaaaaaaa5 = dr[2].ToString();
-                }
-                con.Close();
-            }
-            catch (Exception msg)
-            {
-                throw;
-            }
         }
     }
 }

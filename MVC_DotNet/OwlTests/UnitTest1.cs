@@ -1,3 +1,4 @@
+using Npgsql;
 using NUnit.Framework;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
@@ -14,7 +15,7 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Connection_Test()
         {
-            var h = ConnectionFactory.makeConnection(Enum_Db.PostgreeSQL);
+            var h = ConnectionFactory.makeConnection<NpgsqlConnection>(Enum_Db.PostgreeSQL) as NpgsqlConnection;
             Assert.AreNotEqual(h,null);
         }
     }

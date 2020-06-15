@@ -15,32 +15,11 @@ namespace OwlLibrary.Factory
         {
             {Enum_Db.PostgreeSQL, new  PostgreSQL_Connection()}
         };
-        public static DbConnection makeConnection(Enum_Db dbType)
+        public static T makeConnection<T>(Enum_Db dbType) where T : DbConnection
         {
-            DbConnection conn = null;
+            T conn = null;
              _dic[dbType].Connect(ref conn);
-            return conn;
-
-            try
-            {
-                string sql = "SELECT * FROM users";
-                
-                NpgsqlConnection con = conn as NpgsqlConnection;
-                con.Open();
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    string aaaaaaaaa = dr[0].ToString();
-                    string aaaaaaaaa4 = dr[1].ToString();
-                    string aaaaaaaaa5 = dr[2].ToString();
-                }
-                con.Close();
-            }
-            catch (Exception msg)
-            {
-                throw;
-            }
+            return conn;            
         }
     }
 }

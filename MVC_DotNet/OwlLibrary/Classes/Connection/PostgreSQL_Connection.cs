@@ -18,9 +18,9 @@ namespace OwlLibrary.Classes.Connection
 
             _connectionString = String.Format("Server={0};Port={1};User Id={2};Password={3};Database={4};", server, port, id, pwd, database);
         }
-        public int Connect(ref DbConnection connection)
+        public int Connect<T>(ref T connection) where T : DbConnection
         {
-            connection = new NpgsqlConnection(_connectionString);
+            connection = (T)((new NpgsqlConnection(_connectionString) ) as DbConnection);
             return 1;
         }
     }
