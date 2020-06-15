@@ -15,38 +15,37 @@ namespace OwlLibrary.Classes.GetData
         {
             try
             {
-                string sql = "SELECT * FROM users";
-
-                NpgsqlConnection con = ConnectionFactory.makeConnection<NpgsqlConnection>(Enum_Db.PostgreeSQL) as NpgsqlConnection;
-                con.Open();
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                string sql = "SELECT * FROM "+tableModel.TableName;
+                using (NpgsqlConnection connecion = ConnectionFactory.makeConnection<NpgsqlConnection>(Enum_Db.PostgreeSQL) as NpgsqlConnection)
                 {
-                    T record = new T();
-                    for (int i = 0; i < tableModel.ColumnsNames.Count; i++)
+                    connecion.Open();
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, connecion);
+                    NpgsqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        foreach (var item in record.GetType().GetProperties())
+                        T record = new T();
+                        for (int i = 0; i < tableModel.ColumnsNames.Count; i++)
                         {
-                            var aaaaaa = dr.GetName(i);
-                            if (item.Name == dr.GetName(i))
+                            foreach (var item in record.GetType().GetProperties())
                             {
-                                var aalallala = dr[i];
-                                string recordXXXS = dr[i].ToString();
-                                item.SetValue(record, recordXXXS);
-                                break;
+                                if (item.Name == dr.GetName(i))
+                                {
+                                    string cellData = dr[i].ToString();
+                                    item.SetValue(record, cellData);
+                                    break;
+                                }
                             }
                         }
+                        tableModel.Rows.Add(record);
                     }
-                    tableModel.Rows.Add(record);
+                    connecion.Close();
                 }
-                con.Close();
             }
             catch (Exception msg)
             {
                 throw msg;
             }
-            return 1;
+            return 0;
         }
     }
 }

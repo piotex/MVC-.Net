@@ -20,7 +20,9 @@ namespace OwlTests
         {
             Model_Table<Model_User> table = new Model_UserTable();
             var h = ActionFactory<Model_User>.DoAction(Enum_Action.SelectAll, ref table);
-            Assert.AreNotEqual(h, null);
+            Assert.AreNotEqual(table.Rows[0].id, null);
+            Assert.AreNotEqual(table.Rows[0].id, "");
+            Assert.AreNotEqual(table.Rows[0].id, 0);
         }
     }
 }
