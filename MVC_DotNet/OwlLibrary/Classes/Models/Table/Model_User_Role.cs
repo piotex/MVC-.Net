@@ -12,13 +12,13 @@ namespace OwlLibrary.Classes.Models.Table
         {
             Query = "SELECT * FROM user_role; ";
             Rows = new List<Model_Role>();
-            ColumnsNames = new List<string> { "id", "role_id", "role_name" };
+            //ColumnsNames = new List<string> { "id", "role_id", "role_name" };
         }
         public Model_User_Role(string where_constrain)
         {
             Query = "SELECT * FROM user_role where "+ where_constrain;
             Rows = new List<Model_Role>();
-            ColumnsNames = new List<string> { "id", "role_id", "role_name" };
+            //ColumnsNames = new List<string> { "id", "role_id", "role_name" };
         }
     }
 }

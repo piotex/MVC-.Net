@@ -10,7 +10,7 @@ namespace OwlLibrary.Classes.Models.Tests
         {
             Query = "SELECT * FROM test_users ORDER BY id ASC LIMIT 5";
             Rows = new List<Model_User>();
-            ColumnsNames = new List<string> { "id", "role_id", "name", "pwd", "email" };
+            //ColumnsNames = new List<string> { "id", "role_id", "name", "pwd", "email" };
         }
     }
 }

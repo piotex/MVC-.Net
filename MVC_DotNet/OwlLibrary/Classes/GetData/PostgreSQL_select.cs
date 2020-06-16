@@ -25,23 +25,25 @@ namespace OwlLibrary.Classes.GetData
                     while (dr.Read())
                     {
                         T_Record record = new T_Record();
-                        for (int i = 0; i < tableModel.ColumnsNames.Count; i++)
+                        int numberOfRows = record.GetType().GetProperties().Length;
+                        for (int i = 0; i < numberOfRows; i++)
                         {
-                            foreach (var item in record.GetType().GetProperties())
+                            var properties = record.GetType().GetProperties();
+                            foreach (var propertie in properties)
                             {
-                                if (item.Name == dr.GetName(i))
+                                if (propertie.Name == dr.GetName(i))
                                 {
                                     string cellData = dr[i].ToString();
-                                    switch (Type.GetTypeCode(item.PropertyType))
+                                    switch (Type.GetTypeCode(propertie.PropertyType))
                                     {
                                         case TypeCode.Int32:
                                             {
-                                                item.SetValue(record, Int32.Parse(cellData));
+                                                propertie.SetValue(record, Int32.Parse(cellData));
                                                 break;
                                             }
                                         case TypeCode.String:
                                             {
-                                                item.SetValue(record, cellData.ToString());
+                                                propertie.SetValue(record, cellData.ToString());
                                                 break;
                                             }
                                         default:
