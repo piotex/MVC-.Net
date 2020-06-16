@@ -1,13 +1,10 @@
 ﻿using NUnit.Framework;
 using OwlLibrary.Classes.Models.Basic;
+using OwlLibrary.Classes.Models.Query;
+using OwlLibrary.Classes.Models.Query.Tests;
 using OwlLibrary.Classes.Models.Records;
-using OwlLibrary.Classes.Models.Table;
-using OwlLibrary.Classes.Models.Tests;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OwlTests
 {
@@ -21,7 +18,7 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Table<Model_User> table = new Model_Test_UsersAll();
+            Model_Query<Model_User> table = new Model_Select_AllUsers_Test();
             var h = ActionFactory<Model_User>.DoAction(Enum_Action.Select, ref table);
             Assert.AreEqual(table.Rows[0].id, 1);
             Assert.AreEqual(table.Rows[1].name, "peter");
@@ -33,7 +30,7 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Role_Test()
         {
-            Model_Table<Model_Role> table = new Model_User_Role();
+            Model_Query<Model_Role> table = new Model_Select_Roles();
             var h = ActionFactory<Model_Role>.DoAction(Enum_Action.Select, ref table);
             Assert.AreEqual(table.Rows[0].role_id, 1);
             Assert.AreEqual(table.Rows[1].role_id, 2);

@@ -1,26 +1,22 @@
 ﻿using Npgsql;
 using OwlLibrary.Classes.Models.Basic;
-using OwlLibrary.Classes.Models.Records;
-using OwlLibrary.Classes.Models.Table;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
 using OwlLibrary.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OwlLibrary.Classes.GetData
 {
-    public class PostgreSQL_select<T_Record> : Interface_Action<T_Record> where T_Record :  new()
+    public class PostgreSQL_Select<T_Record> : Interface_Action<T_Record> where T_Record :  new()
     {
-        public int DoAction(ref Model_Table<T_Record> tableModel)
+        public int DoAction(ref Model_Query<T_Record> tableModel)
         {
             try
             {
                 using (NpgsqlConnection connecion = ConnectionFactory.makeConnection<NpgsqlConnection>(Enum_Db.PostgreeSQL) as NpgsqlConnection)
                 {
                     connecion.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand(tableModel.Query, connecion);
+                    NpgsqlCommand cmd = new NpgsqlCommand(tableModel.get_Query(), connecion);
                     NpgsqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {

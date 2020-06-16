@@ -6,15 +6,15 @@ using System.Text;
 
 namespace OwlLibrary.Classes.Models.Query
 {
-    public class Model_Select_AllUsers : Model_Query<Model_User>
+    public class Model_Select_Roles : Model_Query<Model_Role>
     {
-        public Model_Select_AllUsers()
+        public Model_Select_Roles()
         {
-            Rows = new List<Model_User>();
+            Rows = new List<Model_Role>();
         }
         public override string get_Query()
         {
-            return "SELECT * FROM users";
+            return "SELECT * FROM user_role";
         }
     }
 }
