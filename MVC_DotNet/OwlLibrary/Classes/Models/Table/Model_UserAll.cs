@@ -6,9 +6,9 @@ using System.Text;
 
 namespace OwlLibrary.Classes.Models.Table
 {
-    public class Model_UserTable : Model_Table<Model_User>
+    public class Model_UserAll : Model_Table<Model_User>
     {
-        public Model_UserTable()
+        public Model_UserAll()
         {
             Query = "SELECT * FROM users";
             Rows = new List<Model_User>();
