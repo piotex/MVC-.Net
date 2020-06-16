@@ -1,4 +1,6 @@
 ﻿using OwlLibrary.Classes.GetData;
+using OwlLibrary.Classes.Models.Basic;
+using OwlLibrary.Classes.Models.Records;
 using OwlLibrary.Classes.Models.Table;
 using OwlLibrary.Enums;
 using OwlLibrary.Interfaces;
@@ -16,9 +18,7 @@ namespace OwlLibrary.Factory
             switch (actionType)
             {
                 case Enum_Action.Select:
-                    break;
-                case Enum_Action.SelectAll:
-                    new PostgreSQL_selectAll<T>().DoAction(ref table);
+                    new PostgreSQL_select<T>().DoAction(ref table);
                     break;
                 case Enum_Action.Insert:
                     break;

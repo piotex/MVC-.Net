@@ -1,0 +1,12 @@
+CREATE TABLE users(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(10) NOT NULL,																		//zwiekszyc do 50 :(
+	pwd VARCHAR(10) NOT NULL,																		//zwiekszyc do 50 :(
+	email VARCHAR(20) NOT NULL																		//zwiekszyc do 50 :(
+);
+
+INSERT into users(name, pwd, email) values('admin2','1234','pkubon2@gmail.com');
+
+SELECT* from users;
+
+DROP table users;

@@ -1,16 +1,14 @@
 ﻿using OwlLibrary.Classes.Models.Basic;
 using OwlLibrary.Classes.Models.Records;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace OwlLibrary.Classes.Models.Table
+namespace OwlLibrary.Classes.Models.Tests
 {
-    public class Model_UserTable : Model_Table<Model_User>
+    public class Model_Test_UsersAll : Model_Table<Model_User>
     {
-        public Model_UserTable()
+        public Model_Test_UsersAll()
         {
-            Query = "SELECT * FROM users";
+            Query = "SELECT * FROM test_users ORDER BY id ASC LIMIT 5";
             Rows = new List<Model_User>();
             ColumnsNames = new List<string> { "id", "name", "pwd", "email" };
         }

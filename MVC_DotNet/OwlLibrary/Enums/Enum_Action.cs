@@ -7,7 +7,6 @@ namespace OwlLibrary.Enums
     public enum Enum_Action
     {
         Select,
-        SelectAll,
         Insert,
         Delete,
         Update

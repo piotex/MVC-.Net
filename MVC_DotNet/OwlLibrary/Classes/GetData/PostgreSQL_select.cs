@@ -1,4 +1,6 @@
 ﻿using Npgsql;
+using OwlLibrary.Classes.Models.Basic;
+using OwlLibrary.Classes.Models.Records;
 using OwlLibrary.Classes.Models.Table;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
@@ -9,17 +11,16 @@ using System.Text;
 
 namespace OwlLibrary.Classes.GetData
 {
-    public class PostgreSQL_selectAll<T> : Interface_Action<T> where T : Model_User, new()
+    public class PostgreSQL_select<T> : Interface_Action<T> where T : Model_User, new()
     {
         public int DoAction(ref Model_Table<T> tableModel)
         {
             try
             {
-                string sql = "SELECT * FROM "+tableModel.TableName;
                 using (NpgsqlConnection connecion = ConnectionFactory.makeConnection<NpgsqlConnection>(Enum_Db.PostgreeSQL) as NpgsqlConnection)
                 {
                     connecion.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql, connecion);
+                    NpgsqlCommand cmd = new NpgsqlCommand(tableModel.Query, connecion);
                     NpgsqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -31,7 +32,21 @@ namespace OwlLibrary.Classes.GetData
                                 if (item.Name == dr.GetName(i))
                                 {
                                     string cellData = dr[i].ToString();
-                                    item.SetValue(record, cellData);
+                                    switch (Type.GetTypeCode(item.PropertyType))
+                                    {
+                                        case TypeCode.Int32:
+                                            {
+                                                item.SetValue(record, Int32.Parse(cellData));
+                                                break;
+                                            }
+                                        case TypeCode.String:
+                                            {
+                                                item.SetValue(record, cellData.ToString());
+                                                break;
+                                            }
+                                        default:
+                                            throw new Exception("Not implemented Type!!!...");
+                                    }
                                     break;
                                 }
                             }
