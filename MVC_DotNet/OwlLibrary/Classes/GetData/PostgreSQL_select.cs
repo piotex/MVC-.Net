@@ -11,9 +11,9 @@ using System.Text;
 
 namespace OwlLibrary.Classes.GetData
 {
-    public class PostgreSQL_select<T> : Interface_Action<T> where T : Model_User, new()
+    public class PostgreSQL_select<T_Record> : Interface_Action<T_Record> where T_Record :  new()
     {
-        public int DoAction(ref Model_Table<T> tableModel)
+        public int DoAction(ref Model_Table<T_Record> tableModel)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace OwlLibrary.Classes.GetData
                     NpgsqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        T record = new T();
+                        T_Record record = new T_Record();
                         for (int i = 0; i < tableModel.ColumnsNames.Count; i++)
                         {
                             foreach (var item in record.GetType().GetProperties())

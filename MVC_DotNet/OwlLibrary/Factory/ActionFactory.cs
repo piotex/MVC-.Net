@@ -11,14 +11,14 @@ using System.Text;
 
 namespace OwlLibrary.Factory
 {
-    public static class ActionFactory<T> where T : Model_User, new() 
+    public static class ActionFactory<T_Record> where T_Record : new() 
     {
-        public static int DoAction(Enum_Action actionType,ref Model_Table<T> table)
+        public static int DoAction(Enum_Action actionType,ref Model_Table<T_Record> table)
         {
             switch (actionType)
             {
                 case Enum_Action.Select:
-                    new PostgreSQL_select<T>().DoAction(ref table);
+                    new PostgreSQL_select<T_Record>().DoAction(ref table);
                     break;
                 case Enum_Action.Insert:
                     break;

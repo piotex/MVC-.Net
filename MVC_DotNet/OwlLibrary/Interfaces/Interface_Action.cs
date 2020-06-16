@@ -8,7 +8,7 @@ using System.Text;
 
 namespace OwlLibrary.Interfaces
 {
-    public interface Interface_Action<T2> where T2 : Model_User, new()
+    public interface Interface_Action<T2> where T2 : new()
     {
         int DoAction(ref Model_Table<T2> tableModel) ;
     }
