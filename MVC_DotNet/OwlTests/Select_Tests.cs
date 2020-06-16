@@ -24,9 +24,11 @@ namespace OwlTests
             Model_Table<Model_User> table = new Model_Test_UsersAll();
             var h = ActionFactory<Model_User>.DoAction(Enum_Action.Select, ref table);
             Assert.AreEqual(table.Rows[0].id, 1);
-            Assert.AreEqual(table.Rows[1].name, "wojtek");
+            Assert.AreEqual(table.Rows[1].name, "peter");
             Assert.AreEqual(table.Rows[3].pwd, "adam1234");
-            Assert.AreEqual(table.Rows[4].email, "zosia@gmail.com");
+            Assert.AreEqual(table.Rows[3].role_id, 1);
+            Assert.AreEqual(table.Rows[4].role_id, 2);
+            Assert.AreEqual(table.Rows[4].email, "kasia@gmail.com");
         }
     }
 }

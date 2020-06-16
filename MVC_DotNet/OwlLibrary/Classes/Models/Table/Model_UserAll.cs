@@ -12,7 +12,7 @@ namespace OwlLibrary.Classes.Models.Table
         {
             Query = "SELECT * FROM users";
             Rows = new List<Model_User>();
-            ColumnsNames = new List<string> { "id", "name", "pwd", "email" };
+            ColumnsNames = new List<string> { "id", "role_id", "name", "pwd", "email" };
         }
     }
 }

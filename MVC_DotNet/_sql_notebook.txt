@@ -1,12 +1,25 @@
 CREATE TABLE users(
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(10) NOT NULL,																		//zwiekszyc do 50 :(
-	pwd VARCHAR(10) NOT NULL,																		//zwiekszyc do 50 :(
-	email VARCHAR(20) NOT NULL																		//zwiekszyc do 50 :(
+	role_id smallint NOT NULL,																		
+	name VARCHAR(50) NOT NULL,																		
+	pwd VARCHAR(50) NOT NULL,																		
+	email VARCHAR(50) NOT NULL																		
 );
 
-INSERT into users(name, pwd, email) values('admin2','1234','pkubon2@gmail.com');
+INSERT into users(role_id, name, pwd, email) values(1, 'admin2','1234','pkubon2@gmail.com');
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE user_role(
+	id SERIAL PRIMARY KEY,
+	role_id smallint NOT NULL,
+	role_name VARCHAR(20) NOT NULL
+);
+
+INSERT into user_role(role_id,role_name) values(1,'admin');
+
+----------------------------------------------------------------------------------------------------------------------------------------
 SELECT* from users;
 
+----------------------------------------------------------------------------------------------------------------------------------------
 DROP table users;
