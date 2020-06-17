@@ -34,3 +34,4 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netco
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.pdb
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.genruntimeconfig.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.csproj.CopyComplete
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.csprojAssemblyReference.cache

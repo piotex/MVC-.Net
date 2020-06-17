@@ -2,8 +2,8 @@
 
 namespace OwlLibrary.Interfaces
 {
-    public interface Interface_Action<T2> where T2 : new()
+    public interface Interface_Action<T_Record> where T_Record : Model_TableRecord, new()
     {
-        int DoAction(ref Model_Query<T2> tableModel) ;
+        int DoAction(ref Model_Query<T_Record> tableModel) ;
     }
 }

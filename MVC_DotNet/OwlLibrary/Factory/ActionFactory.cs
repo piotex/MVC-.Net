@@ -5,7 +5,7 @@ using OwlLibrary.Enums;
 
 namespace OwlLibrary.Factory
 {
-    public static class ActionFactory<T_Record> where T_Record : new() 
+    public static class ActionFactory<T_Record> where T_Record : Model_TableRecord, new() 
     {
         public static int DoAction(Enum_Action actionType,ref Model_Query<T_Record> table)
         {
@@ -17,8 +17,9 @@ namespace OwlLibrary.Factory
                 case Enum_Action.Insert:
                     new PostgreSQL_SetData<T_Record>().DoAction(ref table);
                     break;
-                //case Enum_Action.Delete:
-                //    break;
+                case Enum_Action.Delete:
+                    new PostgreSQL_SetData<T_Record>().DoAction(ref table);
+                    break;
                 //case Enum_Action.Update:
                     //break;
                 default:

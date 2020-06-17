@@ -7,7 +7,7 @@ using System;
 
 namespace OwlLibrary.Classes.SetData
 {
-    public class PostgreSQL_SetData<T_Record> : Interface_Action<T_Record> where T_Record :  new()
+    public class PostgreSQL_SetData<T_Record> : Interface_Action<T_Record> where T_Record : Model_TableRecord, new()
     {
         public int DoAction(ref Model_Query<T_Record> tableModel)
         {

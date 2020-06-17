@@ -1,12 +1,17 @@
-﻿using System;
+﻿using OwlLibrary.Classes.Models.Basic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OwlLibrary.Classes.Models.Records
 {
-    public class Model_User
+    public class Model_User : Model_TableRecord
     {
-        public int id { get; set; }
+        public Model_User()
+        {
+            id = 0;
+            table_name = "users";
+        }
         public int role_id { get; set; }
         public string name { get; set; }
         public string pwd { get; set; }

@@ -7,7 +7,7 @@ using System;
 
 namespace OwlLibrary.Classes.GetData
 {
-    public class PostgreSQL_Select<T_Record> : Interface_Action<T_Record> where T_Record :  new()
+    public class PostgreSQL_Select<T_Record> : Interface_Action<T_Record> where T_Record : Model_TableRecord , new() 
     {
         public int DoAction(ref Model_Query<T_Record> tableModel)
         {
@@ -21,7 +21,7 @@ namespace OwlLibrary.Classes.GetData
                     while (dr.Read())
                     {
                         T_Record record = new T_Record();
-                        int numberOfRows = record.GetType().GetProperties().Length;
+                        int numberOfRows = record.GetType().GetProperties().Length - 1;     // -1 bo ma parametr TableName którego z bazy danych nie pobiera
                         for (int i = 0; i < numberOfRows; i++)
                         {
                             var properties = record.GetType().GetProperties();
