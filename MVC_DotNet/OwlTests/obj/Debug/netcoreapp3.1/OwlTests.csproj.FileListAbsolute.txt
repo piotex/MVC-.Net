@@ -92,7 +92,6 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\bin\Debug\netcore
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.csprojAssemblyReference.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.AssemblyInfoInputs.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.AssemblyInfo.cs
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.csproj.CoreCompileInputs.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.csproj.CopyComplete
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.dll
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.pdb

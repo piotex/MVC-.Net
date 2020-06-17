@@ -5,9 +5,11 @@ using OwlLibrary.Classes.Models.Query.Tests;
 using OwlLibrary.Classes.Models.Records;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OwlTests
 {
+    [TestClass]
     public class Select_Tests
     {
         [SetUp]

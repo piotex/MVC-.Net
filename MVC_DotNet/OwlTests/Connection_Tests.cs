@@ -2,9 +2,11 @@ using Npgsql;
 using NUnit.Framework;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OwlTests
 {
+    [TestClass]
     public class Connection_Tests
     {
         [SetUp]

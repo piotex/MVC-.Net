@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ofFMHj9qIjRSmZ6rIpRBOlV8pBO1WBEijYMJiyC7r5VN48IVb6q+IwCAdJqfsTE91h1WLGQOobux+pM/UC5ifQ==",
+  "dgSpecHash": "GRWaJV98pvrqbttvCxoppLLDmplTUDiJ3erCxc9ZjZGRA3VA5heB0Ay7PaRSi6+3rurdluY+rEAuppXhk9O2eQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pkubo\\OneDrive\\Desktop\\MVC_DotNet\\MVC_DotNet\\OwlTests\\OwlTests.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\pkubo\\.nuget\\packages\\microsoft.testplatform.testhost\\16.4.0\\microsoft.testplatform.testhost.16.4.0.nupkg.sha512",
     "C:\\Users\\pkubo\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\pkubo\\.nuget\\packages\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
+    "C:\\Users\\pkubo\\.nuget\\packages\\mstest.testframework\\2.1.2\\mstest.testframework.2.1.2.nupkg.sha512",
     "C:\\Users\\pkubo\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\pkubo\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\pkubo\\.nuget\\packages\\npgsql\\4.1.3.1\\npgsql.4.1.3.1.nupkg.sha512",

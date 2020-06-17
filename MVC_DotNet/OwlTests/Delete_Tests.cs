@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OwlLibrary.Classes.Models.Basic;
 using OwlLibrary.Classes.Models.Query.Complete;
 using OwlLibrary.Classes.Models.Query.Tests;
@@ -11,6 +12,7 @@ using System.Text;
 
 namespace OwlTests
 {
+    [TestClass]
     public class Delete_Tests
     {
         [SetUp]
