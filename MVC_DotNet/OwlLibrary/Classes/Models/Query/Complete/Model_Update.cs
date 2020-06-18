@@ -5,21 +5,22 @@ using System.Text;
 
 namespace OwlLibrary.Classes.Models.Query.Complete
 {
-    public class Model_Delete<T_Record> : Model_Query<T_Record> where T_Record : Model_TableRecord
+    public class Model_Update<T_Record> : Model_Query<T_Record> where T_Record : Model_TableRecord
     {
-        public Model_Delete()
+        public Model_Update()
         {
             Rows = new List<T_Record>();
         }
-        
+
         public override string get_Query()
         {
             List<List<string>> parameters = new List<List<string>>();
             get_Params(ref parameters);
 
             var objToDel = Rows[0];
-            string query = "DELETE from "+ objToDel.table_name + " WHERE ";
-            add_parameterToQuery(Enums.Enum_Action.Delete,ref query, ref parameters);
+            string query = "UPDATE  " + objToDel.table_name + " SET ";
+            add_parameterToQuery(Enums.Enum_Action.Update,ref query, ref parameters);
+            query += " WHERE role_id = 99";
             return query;
         }
     }

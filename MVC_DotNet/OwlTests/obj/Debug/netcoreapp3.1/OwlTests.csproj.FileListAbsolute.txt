@@ -96,3 +96,6 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcore
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.dll
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.pdb
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.genruntimeconfig.cache
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\obj\Debug\netcoreapp3.1\OwlTests.csproj.CoreCompileInputs.cache
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlTests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll

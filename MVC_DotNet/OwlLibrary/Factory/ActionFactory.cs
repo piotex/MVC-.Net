@@ -15,15 +15,12 @@ namespace OwlLibrary.Factory
                     new PostgreSQL_Select<T_Record>().DoAction(ref table);
                     break;
                 case Enum_Action.Insert:
-                    new PostgreSQL_SetData<T_Record>().DoAction(ref table);
-                    break;
                 case Enum_Action.Delete:
+                case Enum_Action.Update:
                     new PostgreSQL_SetData<T_Record>().DoAction(ref table);
                     break;
-                //case Enum_Action.Update:
-                    //break;
                 default:
-                    break;
+                    throw new System.Exception("Not implemented actionType!!!");
             }
 
             return 1;

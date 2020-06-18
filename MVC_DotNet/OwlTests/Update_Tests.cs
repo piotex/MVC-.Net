@@ -4,10 +4,13 @@ using OwlLibrary.Classes.Models.Query.Complete;
 using OwlLibrary.Classes.Models.Records;
 using OwlLibrary.Enums;
 using OwlLibrary.Factory;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace OwlTests
 {
-    public class Delete_Tests
+    class Update_Tests
     {
         [SetUp]
         public void Setup()
@@ -17,14 +20,15 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User> table = new Model_Delete<Model_User>();
+            Model_Query<Model_User> table = new Model_Update<Model_User>();
             Model_User user = new Model_User()
             {
-                role_id = 99
+                role_id = 99,
+                email = "changed_email_addres@gmail.com"
             };
             user.table_name = "test_users";
             table.Rows.Add(user);
-            var h = ActionFactory<Model_User>.DoAction(Enum_Action.Delete, ref table);
+            var h = ActionFactory<Model_User>.DoAction(Enum_Action.Update, ref table);
 
             //todo select user where role_id = 99 => jest ==> blad => nie ma => super
 

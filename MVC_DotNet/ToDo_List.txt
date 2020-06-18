@@ -1,0 +1,37 @@
+
+
+	uogólniæ klasy select i insert na podstawie delete
+
+	z delete wydzieliæ funkcje pobieraj¹c¹ parametry - bedzie urzywana we wszystkich 4 zapytaniach 
+
+	utworzyc klase  bazowe zapytanie z funkcj¹ pobieraj¹c¹ parametry
+
+	update ma wprowadzac dodatkowy Row na podstawie którego bêdzie podejmowany parametr na podstawie którego bêd¹ wprowadzanie zmiany
+
+	!!! pozmieniaæ property na interfejsy ¿eby wymuszaæ ich zmiane 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
