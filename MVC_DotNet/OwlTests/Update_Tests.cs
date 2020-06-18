@@ -21,13 +21,19 @@ namespace OwlTests
         public void PostgreSql_Users_Test()
         {
             Model_Query<Model_User> table = new Model_Update<Model_User>();
-            Model_User user = new Model_User()
+            table.Record_ToChange = new Model_User()
             {
                 role_id = 99,
+                table_name = "test_users"
+            };
+
+            Model_User values_ToChange = new Model_User()
+            {
+                pwd = "changed_pwd_xxxxxxxxxxxx",
                 email = "changed_email_addres@gmail.com"
             };
-            user.table_name = "test_users";
-            table.Rows.Add(user);
+            table.Rows.Add(values_ToChange);
+
             var h = ActionFactory<Model_User>.DoAction(Enum_Action.Update, ref table);
 
             //todo select user where role_id = 99 => jest ==> blad => nie ma => super
