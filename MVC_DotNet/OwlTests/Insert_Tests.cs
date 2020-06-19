@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OwlLibrary.Classes.Models.Basic;
 using OwlLibrary.Classes.Models.Query;
+using OwlLibrary.Classes.Models.Query.Complete;
 using OwlLibrary.Classes.Models.Query.Tests;
 using OwlLibrary.Classes.Models.Records;
 using OwlLibrary.Enums;
@@ -18,20 +19,22 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User> table = new Model_Insert_User_Test();
-            Model_User user = new Model_User() {
-                name = "testName_Zbyszek",
-                email = "test@gmail.com",
-                pwd = "testPWD",
-                role_id = 99
+            Model_Query<Model_User> table = new Model_Insert<Model_User>();
+            table.Record_ToChange = new Model_User()
+            {
+                table_name = "test_users"
             };
-            table.Rows.Add(user);
+            Model_User values_ToSet = new Model_User()
+            {
+                role_id = 3,
+                name = "test_Adam",
+                pwd = "insert_pwd_xxxxxxxxxxxx",
+                email = "insert_email_addres@gmail.com"
+            };
+            table.Rows.Add(values_ToSet);
+
             var h = ActionFactory<Model_User>.DoAction(Enum_Action.Insert, ref table);
 
-            Model_Query<Model_User> table2 = new Model_Select_AllUsers_Test();
-            var ha = ActionFactory<Model_User>.DoAction(Enum_Action.Select, ref table2);
-            Assert.AreEqual(table.Rows[0].role_id, table2.Rows[6].role_id);
-            //delete record where role_id = 99
         }
     }
 }

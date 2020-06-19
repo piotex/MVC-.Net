@@ -14,6 +14,8 @@ namespace OwlLibrary.Classes.Models.Query.Complete
             get_SetValues(ref values_ToChange); 
             get_WhereRecords(ref records_ToChange);
 
+            //  UPDATE test_users SET pwd = 'changed_pwd_xxxxxxxxxxxx', email = 'changed_email_addres@gmail.com'  WHERE role_id = 99
+
             string query = "UPDATE  " + Record_ToChange.table_name + " SET ";
             add_parameterToQuery(Enums.Enum_ParameterType.Set, ref query, ref values_ToChange);
             query += " WHERE ";

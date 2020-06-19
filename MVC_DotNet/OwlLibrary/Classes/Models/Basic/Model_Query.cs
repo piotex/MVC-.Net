@@ -42,7 +42,7 @@ namespace OwlLibrary.Classes.Models.Basic
                         {
                             if (null != propertie.GetValue(objToDel) && propertie.GetValue(objToDel).ToString() != "" && "table_name" != propertie.Name)
                             {
-                                parameters.Add(new List<string>() { "string", propertie.Name, propertie.GetValue(objToDel).ToString() });
+                                parameters.Add(new List<string>() { "string", propertie.Name, "'"+propertie.GetValue(objToDel).ToString()+"'" });
                             }
                             break;
                         }
@@ -90,21 +90,7 @@ namespace OwlLibrary.Classes.Models.Basic
                     {
                         first = false;
                     }
-                    switch (param[0])
-                    {
-                        case "int":
-                            {
-                                query += param[1] + " = " + param[2] + " ";
-                                break;
-                            }
-                        case "string":
-                            {
-                                query += param[1] + " = '" + param[2] + "' ";
-                                break;
-                            }
-                        default:
-                            throw new Exception("Not implemented Type!!!...");
-                    }
+                    query += param[1] + " = " + param[2] + " ";
                 }
             }
             else
