@@ -14,7 +14,7 @@ namespace OwlLibrary.Classes.Models.Query.Complete
 
             //INSERT into   test_users ( role_id, name, pwd, email) values (3, 'test_Adam', 'insert_pwd', 'insert_email@gmail.com');
 
-            string query = "INSERT into   " + Record_ToChange.table_name + " ( ";
+            string query = "INSERT into   " + Constrain_Object.table_name + " ( ";
             query += values_ToSet[0][1];
             for (int i = 1; i < values_ToSet.Count; i++)
             {

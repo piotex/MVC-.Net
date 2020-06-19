@@ -11,14 +11,12 @@ namespace OwlLibrary.Classes.Models.Basic
         public Model_Query()
         {
             Rows = new List<T_Record>();
-            Record_ToChange = new T_Record();
+            Constrain_Object = new T_Record();
         }
 
         public abstract string get_Query();
-        public T_Record Record_ToChange { get; set; }
+        public T_Record Constrain_Object { get; set; }
         public List<T_Record> Rows { get; set; }
-
-
 
 
         //  | type | column_name | row_val |
@@ -59,7 +57,7 @@ namespace OwlLibrary.Classes.Models.Basic
         }
         protected int get_WhereRecords(ref List<List<string>> parameters)
         {
-            var objToDel = Record_ToChange;
+            var objToDel = Constrain_Object;
             return sth(ref objToDel, ref parameters);
         }
         protected int add_parameterToQuery(Enum_ParameterType parameterType, ref string query, ref List<List<string>> parameters)

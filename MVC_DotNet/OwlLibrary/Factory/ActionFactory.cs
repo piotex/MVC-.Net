@@ -8,11 +8,6 @@ namespace OwlLibrary.Factory
 {
     public static class ActionFactory<T_Record> where T_Record : Model_TableRecord, new() 
     {
-        public static int Select(List<string> columns_to_select,T_Record constrain_object ,ref Model_Query<T_Record> table)
-        {
-
-            return 0;
-        }
         public static int DoAction(Enum_Action actionType,ref Model_Query<T_Record> table)
         {
             switch (actionType)

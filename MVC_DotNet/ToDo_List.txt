@@ -1,6 +1,6 @@
 
 
-	uogólniæ klasy select i insert na podstawie delete
+	
 
 	!!! pozmieniaæ property na interfejsy ¿eby wymuszaæ ich zmiane 
 

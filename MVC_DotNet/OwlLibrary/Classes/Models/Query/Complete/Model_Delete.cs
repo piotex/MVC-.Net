@@ -11,8 +11,13 @@ namespace OwlLibrary.Classes.Models.Query.Complete
         {
             List<List<string>> records_ToChange = new List<List<string>>();
             get_WhereRecords(ref records_ToChange);
-            string query = "DELETE from "+ Record_ToChange.table_name + " WHERE ";
-            add_parameterToQuery(Enums.Enum_ParameterType.Where, ref query, ref records_ToChange);
+
+            string query = "DELETE from "+ Constrain_Object.table_name ;
+            if (records_ToChange.Count > 0)
+            {
+                query += " WHERE ";
+                add_parameterToQuery(Enums.Enum_ParameterType.Where, ref query, ref records_ToChange);
+            }
             return query;
         }
     }

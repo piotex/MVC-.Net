@@ -9,21 +9,23 @@ namespace OwlLibrary.Classes.Models.Query.Complete
     {
         public override string get_Query()
         {
-            List<List<string>> values_ToSelect = new List<List<string>>();
             List<List<string>> records_ToChange = new List<List<string>>();
-            get_SetValues(ref values_ToSelect);
             get_WhereRecords(ref records_ToChange);
 
             //  UPDATE test_users SET pwd = 'changed_pwd_xxxxxxxxxxxx', email = 'changed_email_addres@gmail.com'  WHERE role_id = 99
-
+            
             string query = "SELECT ";
-            query += values_ToSelect[0][1];
-            for (int i = 1; i < values_ToSelect.Count; i++)
+            var properties = Constrain_Object.GetType().GetProperties();
+            query += properties[0].Name;
+            foreach (var propertie in properties)
             {
-                query += ", " + values_ToSelect[i][1];
+                if (propertie.Name != "table_name")
+                {
+                    query += ", " + propertie.Name;
+                }
             }
             query += " FROM ";
-            query += Record_ToChange.table_name;
+            query += Constrain_Object.table_name;
             if (records_ToChange.Count > 0)
             {
                 query += " WHERE ";

@@ -21,14 +21,12 @@ namespace OwlTests
         public void PostgreSql_Users_Test()
         {
             Model_Query<Model_User_test> table = new Model_Update<Model_User_test>();
-            table.Record_ToChange = new Model_User_test() 
+            table.Constrain_Object = new Model_User_test() 
             {
-                role_id = 99 ,
-                id = 66
+                role_id = 99 
             };
             Model_User_test values_ToChange = new Model_User_test()
             {
-                name = "kotek",
                 pwd = "changed_pwd_xxxxxxxxxxxx",
                 email = "changed_email_addres@gmail.com"
             };
