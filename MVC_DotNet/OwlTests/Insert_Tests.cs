@@ -18,8 +18,8 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User_test> table = new Model_Insert<Model_User_test>();
-            Model_User_test values_ToSet = new Model_User_test()
+            Model_Query<Model_Owl_User_test> table = new Model_Insert<Model_Owl_User_test>();
+            Model_Owl_User_test values_ToSet = new Model_Owl_User_test()
             {
                 role_id = 99,
                 name = "test_Adam",
@@ -28,7 +28,7 @@ namespace OwlTests
             };
             table.Rows.Add(values_ToSet);
 
-            var h = ActionFactory<Model_User_test>.DoAction(Enum_Action.Insert, ref table);
+            var h = ActionFactory<Model_Owl_User_test>.DoAction(Enum_Action.Insert, ref table);
 
         }
     }

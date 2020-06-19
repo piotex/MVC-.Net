@@ -1,0 +1,23 @@
+﻿@model MVC_DotNet.Models.Model_User
+
+<h1>@Model.email</h1>
+
+@using (Html.BeginForm("SignIn_LogIn", "LogIn", FormMethod.Post))
+{
+    <div>Login</div>
+    <div>
+        @Html.TextBoxFor(model => model.email)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.email)
+    </div>
+    <div>Password</div>
+    <div>
+        @Html.TextBoxFor(model => model.pwd)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.pwd)
+    </div>
+    <br/>
+    <button type="submit">Log In</button>
+}

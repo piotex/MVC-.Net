@@ -1,9 +1,11 @@
 ﻿using OwlLibrary.Classes.Models.Basic;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace OwlLibrary.Classes.Models.Records
+namespace MVC_DotNet.Models
 {
     public class Model_User : Model_TableRecord
     {
@@ -12,9 +14,12 @@ namespace OwlLibrary.Classes.Models.Records
             id = 0;
             table_name = "users";
         }
+
         public int role_id { get; set; }
         public string name { get; set; }
+        [Required]
         public string pwd { get; set; }
+        [Required]
         public string email { get; set; }
 
     }

@@ -20,19 +20,19 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User_test> table = new Model_Update<Model_User_test>();
-            table.Constrain_Object = new Model_User_test() 
+            Model_Query<Model_Owl_User_test> table = new Model_Update<Model_Owl_User_test>();
+            table.Constrain_Object = new Model_Owl_User_test() 
             {
                 role_id = 99 
             };
-            Model_User_test values_ToChange = new Model_User_test()
+            Model_Owl_User_test values_ToChange = new Model_Owl_User_test()
             {
                 pwd = "changed_pwd_xxxxxxxxxxxx",
                 email = "changed_email_addres@gmail.com"
             };
             table.Rows.Add(values_ToChange);
 
-            var h = ActionFactory<Model_User_test>.DoAction(Enum_Action.Update, ref table);
+            var h = ActionFactory<Model_Owl_User_test>.DoAction(Enum_Action.Update, ref table);
 
         }
     }

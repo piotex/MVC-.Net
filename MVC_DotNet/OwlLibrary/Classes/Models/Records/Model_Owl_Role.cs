@@ -5,9 +5,9 @@ using System.Text;
 
 namespace OwlLibrary.Classes.Models.Records
 {
-    public class Model_Role : Model_TableRecord
+    public class Model_Owl_Role : Model_TableRecord
     {
-        public Model_Role()
+        public Model_Owl_Role()
         {
             table_name = "user_role";
         }
