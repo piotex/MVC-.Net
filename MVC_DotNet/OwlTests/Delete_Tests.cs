@@ -17,14 +17,8 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User> table = new Model_Delete<Model_User>();
-            table.Record_ToChange = new Model_User()
-            {
-                role_id = 99,
-                table_name = "test_users"
-            };
-
-            var h = ActionFactory<Model_User>.DoAction(Enum_Action.Delete, ref table);
+            Model_Query<Model_User_test> table = new Model_Delete<Model_User_test>();
+            var h = ActionFactory<Model_User_test>.DoAction(Enum_Action.Delete, ref table);
 
             //todo select user where role_id = 99 => jest ==> blad => nie ma => super
 

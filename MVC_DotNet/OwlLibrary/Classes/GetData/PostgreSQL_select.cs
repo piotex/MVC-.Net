@@ -17,12 +17,12 @@ namespace OwlLibrary.Classes.GetData
                 {
                     connecion.Open();
                     NpgsqlCommand cmd = new NpgsqlCommand(tableModel.get_Query(), connecion);
+                    tableModel.Rows = new System.Collections.Generic.List<T_Record>();
                     NpgsqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         T_Record record = new T_Record();
-                        int numberOfRows = record.GetType().GetProperties().Length - 1;     // -1 bo ma parametr TableName którego z bazy danych nie pobiera
-                        for (int i = 0; i < numberOfRows; i++)
+                        for (int i = 0; i < dr.FieldCount; i++)
                         {
                             var properties = record.GetType().GetProperties();
                             foreach (var propertie in properties)

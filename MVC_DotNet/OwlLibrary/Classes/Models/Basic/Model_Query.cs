@@ -21,7 +21,7 @@ namespace OwlLibrary.Classes.Models.Basic
 
 
 
-
+        //  | type | column_name | row_val |
         private int sth(ref T_Record objToDel, ref List<List<string>> parameters)
         {
             var properties = objToDel.GetType().GetProperties();
@@ -75,7 +75,6 @@ namespace OwlLibrary.Classes.Models.Basic
                     break;
                 default:
                     throw new System.Exception("Not implemented actionType!!!");
-                    break;
             }
             if (parameters.Count > 0)
             {

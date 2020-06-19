@@ -20,28 +20,22 @@ namespace OwlTests
         [Test]
         public void PostgreSql_Users_Test()
         {
-            Model_Query<Model_User> table = new Model_Update<Model_User>();
-            table.Record_ToChange = new Model_User()
+            Model_Query<Model_User_test> table = new Model_Update<Model_User_test>();
+            table.Record_ToChange = new Model_User_test() 
             {
-                role_id = 99,
-                table_name = "test_users"
+                role_id = 99 ,
+                id = 66
             };
-
-            Model_User values_ToChange = new Model_User()
+            Model_User_test values_ToChange = new Model_User_test()
             {
+                name = "kotek",
                 pwd = "changed_pwd_xxxxxxxxxxxx",
                 email = "changed_email_addres@gmail.com"
             };
             table.Rows.Add(values_ToChange);
 
-            var h = ActionFactory<Model_User>.DoAction(Enum_Action.Update, ref table);
+            var h = ActionFactory<Model_User_test>.DoAction(Enum_Action.Update, ref table);
 
-            //todo select user where role_id = 99 => jest ==> blad => nie ma => super
-
-            //Model_Query<Model_User> table2 = new Model_Select_AllUsers_Test();
-            //var ha = ActionFactory<Model_User>.DoAction(Enum_Action.Select, ref table2);
-            //Assert.AreEqual(table.Rows[0].role_id, table2.Rows[6].role_id);
-            //delete record where role_id = 99
         }
     }
 }
