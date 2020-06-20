@@ -40,7 +40,15 @@ namespace OwlLibrary.Classes.Models.Basic
                         {
                             if (null != propertie.GetValue(objToDel) && propertie.GetValue(objToDel).ToString() != "" && "table_name" != propertie.Name)
                             {
-                                parameters.Add(new List<string>() { "string", propertie.Name, "'"+propertie.GetValue(objToDel).ToString()+"'" });
+                                parameters.Add(new List<string>() { "string", propertie.Name, "'" + propertie.GetValue(objToDel).ToString() + "'" });
+                            }
+                            break;
+                        }
+                    case TypeCode.Double:
+                        {
+                            if (null != propertie.GetValue(objToDel) && (Double)propertie.GetValue(objToDel) != 0)
+                            {
+                                parameters.Add(new List<string>() { "string", propertie.Name, "\"" + propertie.GetValue(objToDel).ToString() + "\"" });
                             }
                             break;
                         }

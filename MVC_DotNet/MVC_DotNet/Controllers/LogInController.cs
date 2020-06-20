@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
+using MVC_DotNet.Hellpers;
 using MVC_DotNet.Models;
 using OwlLibrary.Classes.Models.Basic;
 using OwlLibrary.Classes.Models.Query.Complete;
@@ -28,29 +29,40 @@ namespace MVC_DotNet.Controllers
         {
             return View(new Model_User());
         }
-        
         [HttpPost]
-        public ActionResult SignIn_LogIn(Model_User model)
+        public ActionResult SignIn_Logic(Model_User model)
         {
             Model_Query<Model_User> table = new Model_Select<Model_User>();
-            string query = String.Format("select id from users where email = '{0}' and pwd = '{1}'",model.email,model.pwd);
-            RequestFactory<Model_User>.MakeRequest(query,ref table);
-            if (table.Rows.Count>0)
+            if (model.IsValid())
             {
-                this.ControllerContext.HttpContext.Response.Cookies.Append("zz","qss");
+                string query = String.Format("select * from users where email = '{0}' and pwd = '{1}'", model.email, model.pwd);
+                RequestFactory<Model_User>.MakeRequest(query, ref table);
+                if (table.Rows.Count > 0)
+                {
+                    return View("../Home/Index", model);
+                }
             }
             return View("SignIn", model);
         }
 
 
 
-        public string Register()
+        public ActionResult Register()
         {
-            var aa = ControllerContext.HttpContext.Request.Cookies["zz"];
-            return aa[0].ToString();
-            //return View();
+            return View(new Model_User());
         }
-
-
+        [HttpPost]
+        public ActionResult Register_Logic(Model_User model)
+        {
+            Model_Query<Model_User> table = new Model_Insert<Model_User>();
+            table.Rows.Add(model);
+            if (model.IsValid())
+            {
+                table.Rows[0].role_id = 3;
+                ActionFactory<Model_User>.DoAction(Enum_Action.Insert, ref table);
+                return SignIn_Logic(model);
+            }
+            return View("Register", model);
+        }
     }
 }

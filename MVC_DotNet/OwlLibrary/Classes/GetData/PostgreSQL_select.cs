@@ -37,6 +37,11 @@ namespace OwlLibrary.Classes.GetData
                                                 propertie.SetValue(record, Int32.Parse(cellData));
                                                 break;
                                             }
+                                        case TypeCode.Double:
+                                            {
+                                                propertie.SetValue(record, Double.Parse(cellData));
+                                                break;
+                                            }
                                         case TypeCode.String:
                                             {
                                                 propertie.SetValue(record, cellData.ToString());

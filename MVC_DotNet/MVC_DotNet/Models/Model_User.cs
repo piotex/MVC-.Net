@@ -18,8 +18,10 @@ namespace MVC_DotNet.Models
         public int role_id { get; set; }
         public string name { get; set; }
         [Required]
+        [Display(Name = "Password")]
         public string pwd { get; set; }
         [Required]
+        [Display(Name = "Email address")]
         public string email { get; set; }
 
     }
