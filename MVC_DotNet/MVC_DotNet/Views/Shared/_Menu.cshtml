@@ -1,16 +1,70 @@
-﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+﻿@model MVC_DotNet.Models.Model_Basket
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="SignIn">Sign In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="Register">Register</a>
-                </li>
+                @{
+                    if (null != Model && Model.Logged == true)
+                    {
+                        @using (Html.BeginForm("Index_Logged", "Home", FormMethod.Post))
+                        {
+                            @Html.HiddenFor(model => model.User.role_id);
+                            @Html.HiddenFor(model => model.User.id);
+                            @Html.HiddenFor(model => model.User.pwd);
+                            @Html.HiddenFor(model => model.User.table_name);
+                            @Html.HiddenFor(model => model.User.email);
+                            @Html.HiddenFor(model => model.Logged);
+                            @Html.HiddenFor(model => model.User.name);
+
+                            for (int i = 0; i < Model.Basket.Count; i++)
+                            {
+                                @Html.HiddenFor(model => model.Basket[i].id);
+                                @Html.HiddenFor(model => model.Basket[i].table_name);
+                                @Html.HiddenFor(model => model.Basket[i]._name_);
+                                @Html.HiddenFor(model => model.Basket[i]._price_);
+                                @Html.HiddenFor(model => model.Basket[i]._quantity_);
+                                @Html.HiddenFor(model => model.Basket[i]._type_);
+                            }
+                            <button type="submit">Home</button>
+                        }
+                        @*----Please tell me how to do it correctly, because for me it's horrible to pass everything by hand-----*@
+                        <li class="nav-item">
+                            @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+                            {
+                                @Html.HiddenFor(model => model.User.role_id);
+                                @Html.HiddenFor(model => model.User.id);
+                                @Html.HiddenFor(model => model.User.pwd);
+                                @Html.HiddenFor(model => model.User.table_name);
+                                @Html.HiddenFor(model => model.User.email);
+                                @Html.HiddenFor(model => model.Logged);
+                                @Html.HiddenFor(model => model.User.name);
+
+                                for (int i = 0; i < Model.Basket.Count; i++)
+                                {
+                                    @Html.HiddenFor(model => model.Basket[i].id);
+                                    @Html.HiddenFor(model => model.Basket[i].table_name);
+                                    @Html.HiddenFor(model => model.Basket[i]._name_);
+                                    @Html.HiddenFor(model => model.Basket[i]._price_);
+                                    @Html.HiddenFor(model => model.Basket[i]._quantity_);
+                                    @Html.HiddenFor(model => model.Basket[i]._type_);
+                                }
+                                <button type="submit">Products</button>
+                            }
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="SignIn">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="Register">Register</a>
+                        </li>
+                    }
+                }
             </ul>
         </div>
     </div>

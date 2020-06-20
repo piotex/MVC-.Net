@@ -11,23 +11,31 @@ namespace MVC_DotNet.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Index_Logged(Model_Basket _basket)
+        {
+            if (_basket is null)
+            {
+                return View("Index");
+            }
+            return View(_basket);
+        }
 
+
+
+
+
+
+
+        private readonly ILogger<HomeController> _logger;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

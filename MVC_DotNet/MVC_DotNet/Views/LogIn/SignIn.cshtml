@@ -1,4 +1,4 @@
-﻿@model MVC_DotNet.Models.Model_User
+﻿@model MVC_DotNet.Models.Model_Basket
 
 <h1>Sign In</h1>
 
@@ -6,17 +6,17 @@
 {
     <div>Email</div>
     <div>
-        @Html.TextBoxFor(model => model.email)
+        @Html.TextBoxFor(model => model.User.email)
     </div>
     <div>
-        @Html.ValidationMessageFor(model => model.email)
+        @Html.ValidationMessageFor(model => model.User.email)
     </div>
     <div>Password</div>
     <div>
-        @Html.TextBoxFor(model => model.pwd)
+        @Html.TextBoxFor(model => model.User.pwd)
     </div>
     <div>
-        @Html.ValidationMessageFor(model => model.pwd)
+        @Html.ValidationMessageFor(model => model.User.pwd)
     </div>
     <br />
     <button type="submit">Log In</button>

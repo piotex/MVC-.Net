@@ -17,7 +17,6 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netco
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.TagHelpers.output.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\MVC_DotNet.RazorCoreGenerate.cache
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -201,3 +200,7 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netco
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netcoreapp3.1\OwlTests.pdb
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netcoreapp3.1\OwlLibrary.pdb
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\bin\Debug\netcoreapp3.1\Web.config
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductsAdmin.cshtml.g.cs
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductsUser.cshtml.g.cs
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductsClient.cshtml.g.cs
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index_Logged.cshtml.g.cs

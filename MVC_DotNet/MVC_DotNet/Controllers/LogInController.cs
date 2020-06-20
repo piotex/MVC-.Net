@@ -25,21 +25,30 @@ namespace MVC_DotNet.Controllers
         }
 
 
-        public ActionResult SignIn()
+        public ActionResult SignIn(Model_Basket model)
         {
-            return View(new Model_User());
+            return View(model);
         }
         [HttpPost]
-        public ActionResult SignIn_Logic(Model_User model)
+        public ActionResult SignIn_Logic(Model_Basket model)
         {
             Model_Query<Model_User> table = new Model_Select<Model_User>();
-            if (model.IsValid())
+            if (model.User.IsValid())
             {
-                string query = String.Format("select * from users where email = '{0}' and pwd = '{1}'", model.email, model.pwd);
+                string query = String.Format("select * from users where email = '{0}' and pwd = '{1}'", model.User.email, model.User.pwd);
                 RequestFactory<Model_User>.MakeRequest(query, ref table);
                 if (table.Rows.Count > 0)
                 {
-                    return View("../Home/Index", model);
+                    model.Logged = true;
+                    model.User = table.Rows[0];
+
+                    model.Basket.Add(new Model_Product() { _name_ = "pizza",_price_=(99.99),_quantity_=100,_type_=12});
+                    model.Basket.Add(new Model_Product() { _name_ = "spaghetti",_price_=(199.99),_quantity_=10,_type_=13});
+                    model.Basket.Add(new Model_Product() { _name_ = "bred",_price_=(0.99),_quantity_=100500,_type_=1});
+                    model.Basket.Add(new Model_Product() { _name_ = "sugar",_price_=(1.99),_quantity_=12000,_type_=2});
+                    model.Basket.Add(new Model_Product() { _name_ = "Lays",_price_=(9.99),_quantity_=990,_type_=7 });
+
+                    return View("../Home/Index_Logged", model);
                 }
             }
             return View("SignIn", model);
@@ -52,17 +61,17 @@ namespace MVC_DotNet.Controllers
             return View(new Model_User());
         }
         [HttpPost]
-        public ActionResult Register_Logic(Model_User model)
+        public ActionResult Register_Logic(Model_Basket model)
         {
             Model_Query<Model_User> table = new Model_Insert<Model_User>();
-            table.Rows.Add(model);
-            if (model.IsValid())
+            table.Rows.Add(model.User);
+            if (model.User.IsValid())
             {
                 table.Rows[0].role_id = 3;
                 ActionFactory<Model_User>.DoAction(Enum_Action.Insert, ref table);
                 return SignIn_Logic(model);
             }
-            return View("Register", model);
+            return View("Register");
         }
     }
 }
