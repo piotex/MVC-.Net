@@ -29,7 +29,7 @@ DROP table users;
 DELETE from users where role_id = '99';
 SELECT* from test_users;
 
-test
+bbb
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 CREATE TABLE products(
