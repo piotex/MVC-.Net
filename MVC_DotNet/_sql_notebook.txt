@@ -15,7 +15,11 @@ CREATE TABLE user_role(
 	role_id smallint NOT NULL,
 	role_name VARCHAR(20) NOT NULL
 );
-
+CREATE TABLE categories(
+	id SERIAL PRIMARY KEY,
+	categorie_id smallint NOT NULL,
+	categorie_name VARCHAR(20) NOT NULL
+);
 INSERT into user_role(role_id,role_name) values(1,'admin');
 
 ----------------------------------------------------------------------------------------------------------------------------------------

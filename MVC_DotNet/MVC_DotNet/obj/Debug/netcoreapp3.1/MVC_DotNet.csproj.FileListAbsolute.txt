@@ -204,3 +204,5 @@ C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netco
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductsUser.cshtml.g.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Products\ProductsClient.cshtml.g.cs
 C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index_Logged.cshtml.g.cs
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Index.cshtml.g.cs
+C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\MVC_DotNet\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Configure.cshtml.g.cs

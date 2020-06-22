@@ -42,12 +42,13 @@ namespace MVC_DotNet.Controllers
                     model.Logged = true;
                     model.User = table.Rows[0];
 
+                    /*
                     model.Basket.Add(new Model_Product() { _name_ = "pizza",_price_=(99.99),_quantity_=100,_type_=12});
                     model.Basket.Add(new Model_Product() { _name_ = "spaghetti",_price_=(199.99),_quantity_=10,_type_=13});
                     model.Basket.Add(new Model_Product() { _name_ = "bred",_price_=(0.99),_quantity_=100500,_type_=1});
                     model.Basket.Add(new Model_Product() { _name_ = "sugar",_price_=(1.99),_quantity_=12000,_type_=2});
                     model.Basket.Add(new Model_Product() { _name_ = "Lays",_price_=(9.99),_quantity_=990,_type_=7 });
-
+                    */
                     return View("../Home/Index_Logged", model);
                 }
             }
