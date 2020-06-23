@@ -10,11 +10,11 @@ namespace LionLibrary.Factory
 {
     public static class Factory_Connection<T_DbConnection> where T_DbConnection : DbConnection, new()
     {
-        public static DbConnection GetConnection(string connectionString)
+        public static DbConnection GetConnection(string path)
         {
             if (typeof(T_DbConnection) == typeof(NpgsqlConnection))
             {
-                return new Connection_PostgreSQL(connectionString).GetConnection();
+                return new Connection_PostgreSQL(path).GetConnection();
             }
 
             throw new NotImplementedException();
