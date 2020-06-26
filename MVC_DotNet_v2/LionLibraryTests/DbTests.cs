@@ -49,6 +49,19 @@ namespace LionLibraryTests
             string query = "DELETE FROM users WHERE id = 12;";
             new SetData_PostgreSQL().SetData(connStr, query);
         }
+        [Test]
+        public void Insert_Test()
+        {
+            string connStr = @"C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet_v2\LionLibrary\db_config.xml";
+            TestModel t = new TestModel()
+            {
+                email = "ins_em@gmail.com",
+                name = "ins_nam",
+                pwd = "ins_pwd",
+                role_id = 99
+            };
+            new SetObj_PostgreSQL<TestModel>().SetObj(ref t,connStr);
+        }
 
 
     }

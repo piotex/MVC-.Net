@@ -16,7 +16,7 @@ namespace LionLibrary.Factory
         }
         public virtual void Insert(T_Result ob)
         {
-            throw new NotImplementedException();
+            new SetObj_PostgreSQL<T_Result>().SetObj(ref ob, Get_PathTo_ConnectionStr());
         }
         public virtual void Update(string query)
         {
