@@ -154,11 +154,13 @@
     <Compile Include="Controllers\ConfirmEmailAddressController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DB\Request_Factory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\InputValidationHelpers.cs" />
+    <Compile Include="Models\DbModels\DbModel_Products.cs" />
     <Compile Include="Models\DbModels\DbModel_Users.cs" />
     <Compile Include="Models\LogIn\Model_Register.cs" />
     <Compile Include="Models\LogIn\Model_SignIn.cs" />
@@ -203,6 +205,7 @@
     <Content Include="Views\Shared\Menu.cshtml" />
     <Content Include="Views\LogIn\SignIn.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
