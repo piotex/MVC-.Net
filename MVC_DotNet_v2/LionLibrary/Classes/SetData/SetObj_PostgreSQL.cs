@@ -37,7 +37,7 @@ namespace LionLibrary.Classes.SetData
                         {
                             if (null != propertie.GetValue(objToDel) && (Double)propertie.GetValue(objToDel) != 0)
                             {
-                                parameters.Add(new List<string>() { "string", propertie.Name, "\"" + propertie.GetValue(objToDel).ToString() + "\"" });
+                                parameters.Add(new List<string>() { "string", propertie.Name,  propertie.GetValue(objToDel).ToString().Replace(',','.')  });
                             }
                             break;
                         }

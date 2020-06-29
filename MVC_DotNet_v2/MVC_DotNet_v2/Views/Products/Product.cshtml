@@ -1,0 +1,13 @@
+﻿@model MVC_DotNet_v2.Models.DbModels.DbModel_Products
+
+<tr>
+    @using (Html.BeginForm("ChangeProduct", "Products", FormMethod.Post))
+     {
+        @Html.HiddenFor(m => m.id)
+        <td>@Html.TextBoxFor(m => m._quantity_)</td>
+        <td>@Html.TextBoxFor(m => m._type_)</td>
+        <td>@Html.TextBoxFor(m => m._name_)</td>
+        <td>@Html.TextBoxFor(m => m._price_)</td>
+        <td><button type="submit">Save</button></td>
+     }
+</tr>

@@ -10,7 +10,10 @@ namespace MVC_DotNet_v2.Helpers
         public static bool IsValid(this string value)
         {
             bool ok = true;
-
+            if (value=="" || value.Contains('-'))
+            {
+                ok = false;
+            }
             return ok;
         }
     }

@@ -1,7 +1,7 @@
 ﻿@model List<MVC_DotNet_v2.Models.DbModels.DbModel_Products>
 
 <h1>Products</h1>
-
+<Reference Include="netstandard" />
 
 <table class="table table-striped">
     <thead>
@@ -13,22 +13,16 @@
         </tr>
     </thead>
     <tbody>
-        @using (Html.BeginForm("Index", "Products", FormMethod.Post))
-        {
-            for (int i = 0; i < Model.Count(); i++)
-            {
-                <tr>
-                    @Html.HiddenFor(m => m[i].id)
-                    <td>@Html.TextBoxFor(m => m[i]._quantity_)</td>
-                    <td>@Html.TextBoxFor(m => m[i]._type_)</td>
-                    <td>@Html.TextBoxFor(m => m[i]._name_)</td>
-                    <td>@Html.TextBoxFor(m => m[i]._price_)</td>
-                </tr>
-            }
-            <tr><button type="submit">Save</button></tr>
+        @{
+            MVC_DotNet_v2.Models.DbModels.DbModel_Products a = new MVC_DotNet_v2.Models.DbModels.DbModel_Products() { id = -1 };
+            Html.RenderPartial("Product", a);
         }
-        </tbody>
-    </table>
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            Html.RenderPartial("Product", Model[i]);
+        }
+    </tbody>
+</table>
     
 
 
