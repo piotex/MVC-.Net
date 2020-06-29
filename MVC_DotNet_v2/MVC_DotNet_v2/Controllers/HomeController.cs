@@ -10,7 +10,6 @@ namespace MVC_DotNet_v2.Controllers
     {
         public ActionResult Index()
         {
-            Session["xD"] = "aa";
             return View();
         }
 

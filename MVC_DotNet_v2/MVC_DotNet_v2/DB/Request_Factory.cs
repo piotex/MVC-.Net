@@ -2,6 +2,7 @@
 using LionLibrary.Factory;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -11,7 +12,8 @@ namespace MVC_DotNet_v2.DB
     {
         public override string Get_PathTo_ConnectionStr()
         {
-            return @"C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet_v2\LionLibrary\db_config.xml";
+            //return @"C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet_v2\LionLibrary\db_config.xml";
+            return ConfigurationManager.ConnectionStrings["ConnectionStrings"].ConnectionString;
         }
     }
 }

@@ -33,7 +33,11 @@ namespace LionLibrary.Classes.Connection
                     _ConnectionString = result.ConnectionString;
                 }
             }
-            else
+            if (path.ToLower().Contains("Database="))
+            {
+                _ConnectionString = path;
+            }
+            if (!path.ToLower().Contains(".xml") && !path.ToLower().Contains("Database="))
             {
                 throw new NotImplementedException();
             }

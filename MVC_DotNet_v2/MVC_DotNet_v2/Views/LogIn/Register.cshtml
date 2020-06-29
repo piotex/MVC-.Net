@@ -1,0 +1,29 @@
+﻿@model MVC_DotNet_v2.Models.LogIn.Model_Register
+
+<h1>Register</h1>
+
+@using (Html.BeginForm("Register", "LogIn", FormMethod.Post))
+{
+    <div>
+        <p> Name </p>
+        <div>
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+    </div>
+    <div>
+        <p>Email</p>
+        <div>
+            @Html.TextBoxFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+    <div>
+        <p>Password</p>
+        <div>
+            @Html.TextBoxFor(model => model.Pwd)
+            @Html.ValidationMessageFor(model => model.Pwd)
+        </div>
+    </div>
+    <button type="submit">Register</button>
+}

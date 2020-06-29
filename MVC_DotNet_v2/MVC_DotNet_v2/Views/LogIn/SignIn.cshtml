@@ -1,0 +1,22 @@
+﻿@model MVC_DotNet_v2.Models.LogIn.Model_SignIn
+
+<h1>Sign in</h1>
+
+@using (Html.BeginForm("SignIn", "LogIn", FormMethod.Post))
+{
+    <div>
+        <p>Email</p>
+        <div>
+            @Html.TextBoxFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+    <div>
+        <p>Password</p>
+        <div>
+            @Html.TextBoxFor(model => model.Pwd)
+            @Html.ValidationMessageFor(model => model.Pwd)
+        </div>
+    </div>
+    <button type="submit">Sign in</button>
+}

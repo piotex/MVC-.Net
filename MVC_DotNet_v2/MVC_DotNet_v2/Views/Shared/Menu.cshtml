@@ -1,0 +1,37 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                @if(Session["role_id"] == null || (Session["role_id"].ToString() != "1" && Session["role_id"].ToString() != "2" && Session["role_id"].ToString() != "3") )
+                {
+                    <li>@Html.ActionLink("Sign in", "SignIn", "LogIn")</li>
+                    <li>@Html.ActionLink("Register", "Register", "LogIn")</li>
+                }
+                else
+                {
+                    if (Session["role_id"].ToString() == "1")
+                    {
+                    }
+                    if (Session["role_id"].ToString() == "2")
+                    {
+                    }
+                    if (Session["role_id"].ToString() == "3")
+                    {
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
