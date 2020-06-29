@@ -9,7 +9,7 @@ namespace LionLibrary.Factory
 {
     public abstract class Factory_Request<T_Result> where T_Result : Model_Table, new()
     {
-        public abstract string Get_PathTo_ConnectionStr();
+        protected abstract string Get_PathTo_ConnectionStr();
         public virtual List<T_Result> Select(string query)
         {
             return new Select_PostgreSQL<T_Result>().Select(Get_PathTo_ConnectionStr(), query);

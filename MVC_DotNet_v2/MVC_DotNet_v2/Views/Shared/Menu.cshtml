@@ -10,11 +10,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
 
-                @if(Session["role_id"] == null || (Session["role_id"].ToString() != "1" && Session["role_id"].ToString() != "2" && Session["role_id"].ToString() != "3") )
+                @if (Session["role_id"] == null || (Session["role_id"].ToString() != "1" && Session["role_id"].ToString() != "2" && Session["role_id"].ToString() != "3"))
                 {
                     <li>@Html.ActionLink("Sign in", "SignIn", "LogIn")</li>
                     <li>@Html.ActionLink("Register", "Register", "LogIn")</li>
@@ -23,12 +23,15 @@
                 {
                     if (Session["role_id"].ToString() == "1")
                     {
+                        <li>@Html.ActionLink("Log out", "LogOut", "LogIn")</li>
                     }
                     if (Session["role_id"].ToString() == "2")
                     {
+                        <li>@Html.ActionLink("Log out", "LogOut", "LogIn")</li>
                     }
                     if (Session["role_id"].ToString() == "3")
                     {
+                        <li>@Html.ActionLink("Log out", "LogOut", "LogIn")</li>
                     }
                 }
             </ul>

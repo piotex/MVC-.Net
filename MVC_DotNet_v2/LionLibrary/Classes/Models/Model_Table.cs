@@ -6,7 +6,6 @@ namespace LionLibrary.Classes.Models
 {
     public abstract class Model_Table 
     { 
-        public int id { get; set; }
         public abstract string GetTableName();
     }
 }

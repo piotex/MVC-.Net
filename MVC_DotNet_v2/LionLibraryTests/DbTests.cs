@@ -10,6 +10,7 @@ namespace LionLibraryTests
 {
     class TestModel : Model_Table
     {
+        public int id { get; set; }
         public int role_id { get; set; }
         public string name { get; set; }
         public string pwd { get; set; }
