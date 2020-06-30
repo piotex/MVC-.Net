@@ -1,9 +1,0 @@
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\bin\Debug\netstandard2.0\OwlLibrary.deps.json
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\bin\Debug\netstandard2.0\OwlLibrary.dll
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.csprojAssemblyReference.cache
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.AssemblyInfoInputs.cache
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.AssemblyInfo.cs
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.csproj.CoreCompileInputs.cache
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\bin\Debug\netstandard2.0\OwlLibrary.pdb
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.dll
-C:\Users\pkubo\OneDrive\Desktop\MVC_DotNet\MVC_DotNet\OwlLibrary\obj\Debug\netstandard2.0\OwlLibrary.pdb
