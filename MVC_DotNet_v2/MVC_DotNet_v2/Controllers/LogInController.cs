@@ -79,7 +79,9 @@ namespace MVC_DotNet_v2.Controllers
                     smtp.UseDefaultCredentials = false;
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
+                    ///////////
                     throw new Exception("Zwracam sobie uwage ze musze uzupelnic pole haslo w linijce ponizej w miejscu xxx -> S1-5");
+                    ///////////
                     smtp.Credentials = new NetworkCredential("pkubon3@gmail.com", "xxx");
                     smtp.Send(mm);
 

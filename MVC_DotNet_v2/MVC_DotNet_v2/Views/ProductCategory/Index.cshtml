@@ -1,0 +1,32 @@
+﻿@model List<MVC_DotNet_v2.Models.DbModels.DbModel_Categories>
+
+<h1>Products</h1>
+<Reference Include="netstandard" />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Type</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            MVC_DotNet_v2.Models.DbModels.DbModel_Categories a = new MVC_DotNet_v2.Models.DbModels.DbModel_Categories() { id = -1 };
+            Html.RenderPartial("Category", a);
+        }
+        @for (int i = 0; i < (Model as List<MVC_DotNet_v2.Models.DbModels.DbModel_Categories>).Count; i++)
+        {
+            Html.RenderPartial("Category", Model[i]);
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+

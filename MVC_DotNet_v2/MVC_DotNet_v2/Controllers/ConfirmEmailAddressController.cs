@@ -4,7 +4,6 @@ using MVC_DotNet_v2.Models.DbModels;
 using MVC_DotNet_v2.Models.LogIn;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -23,7 +22,7 @@ namespace MVC_DotNet_v2.Controllers
                 return View("../LogIn/SignIn");
             }
             ModelState.AddModelError("Pwd", "Confirm email address!");
-            return View(new Model_Register());
+            return View("../LogIn/SignIn", new Model_Register());
         }
     }
 }
