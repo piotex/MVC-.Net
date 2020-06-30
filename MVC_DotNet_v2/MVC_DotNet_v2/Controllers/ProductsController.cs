@@ -14,26 +14,55 @@ namespace MVC_DotNet_v2.Controllers
         // GET: Products
         public ActionResult Index()
         {
+            switch (Session["role_id"])
+            {
+                case 2:
+                    return AdminView();
+                case 3:
+                    return UserView();
+            }
+            throw new NotImplementedException();
+        }
+        public ActionResult UserView()
+        {
             DB.Request_Factory<DbModel_Categories> facx = new DB.Request_Factory<DbModel_Categories>();
             List<DbModel_Categories> listx = facx.Select("select categorie_id, categorie_name from categories order by categorie_id;");
             Dictionary<string, string> categories = new Dictionary<string, string>();
             foreach (var item in listx)
             {
-                categories.Add(item.categorie_id.ToString(),item.categorie_name);
+                categories.Add(item.categorie_id.ToString(), item.categorie_name);
             }
             ViewBag.Categories = categories;
 
-            //DB.Request_Factory<DbModel_Products> fac = new DB.Request_Factory<DbModel_Products>();
-            //List<DbModelJoin_Products> list = fac.Select("SELECT * from products;");
             DB.Request_Factory<DbModelJoin_Products> fac = new Request_Factory<DbModelJoin_Products>();
             List<DbModelJoin_Products> list = fac.Select("SELECT " +
                                                         "products.id, products._name_, products._price_, products._quantity_, products._type_, categories.categorie_name " +
                                                         "FROM products " +
                                                         "LEFT JOIN categories ON products._type_ = categories.categorie_id " +
                                                         "ORDER BY products.id; ");
-            return View(list);
+            return View("UserView",list);
         }
-        
+        public ActionResult AdminView()
+        {
+            DB.Request_Factory<DbModel_Categories> facx = new DB.Request_Factory<DbModel_Categories>();
+            List<DbModel_Categories> listx = facx.Select("select categorie_id, categorie_name from categories order by categorie_id;");
+            Dictionary<string, string> categories = new Dictionary<string, string>();
+            foreach (var item in listx)
+            {
+                categories.Add(item.categorie_id.ToString(), item.categorie_name);
+            }
+            ViewBag.Categories = categories;
+
+            DB.Request_Factory<DbModelJoin_Products> fac = new Request_Factory<DbModelJoin_Products>();
+            List<DbModelJoin_Products> list = fac.Select("SELECT " +
+                                                        "products.id, products._name_, products._price_, products._quantity_, products._type_, categories.categorie_name " +
+                                                        "FROM products " +
+                                                        "LEFT JOIN categories ON products._type_ = categories.categorie_id " +
+                                                        "ORDER BY products.id; ");
+            return View("AdminView",list);
+        }
+
+
         [HttpPost]
         public ActionResult ChangeProduct(DbModelJoin_Products _product)
         {
@@ -47,7 +76,6 @@ namespace MVC_DotNet_v2.Controllers
                     _quantity_ = _product._quantity_,
                     _type_ = _product._type_
                 };
-
 
                 Request_Factory<DbModel_Products> request_Factory = new Request_Factory<DbModel_Products>();
                 if (product.id > 0)
@@ -72,3 +100,5 @@ namespace MVC_DotNet_v2.Controllers
         }
     }
 }
+
+//Session["basket"] = new List<DbModel_Products>();

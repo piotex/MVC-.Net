@@ -154,6 +154,7 @@
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DB\Request_Factory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,12 +208,16 @@
     <Content Include="Views\LogIn\SignIn.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\Product.cshtml" />
+    <Content Include="Views\Products\AdminProduct.cshtml" />
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\ProductCategory\Category.cshtml" />
+    <Content Include="Views\Products\UserView.cshtml" />
+    <Content Include="Views\Products\AdminView.cshtml" />
+    <Content Include="Views\Products\UserProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,17 @@
+﻿@model MVC_DotNet_v2.Models.DbModels.DbModelJoin_Products
+
+<tr>
+
+
+    @using (Html.BeginForm("ChangeProduct", "Products", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.id)
+        @Html.HiddenFor(m => m._type_)
+        <td>@Html.TextBoxFor(m => m._name_, new { @readonly = "readonly" })</td>
+        <td>@Html.TextBoxFor(m => m._quantity_, new { @readonly = "readonly" })</td>
+        <td>@Html.TextBoxFor(m => m._price_, new { @readonly = "readonly" })</td>
+        <td></td>
+        <td>@Html.TextBoxFor(m => m._quantity_, new { @readonly = "readonly" })</td>
+        <td><button type="submit">Order</button></td>
+    }
+</tr>

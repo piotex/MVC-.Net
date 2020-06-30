@@ -37,6 +37,7 @@ namespace MVC_DotNet_v2.Controllers
                 List<DbModel_Users> response = request_Factory.Select(query);
                 if (response.Count > 0 && response[0].role_id > 0)
                 {
+                    Session["basket"] = new List<DbModel_Products>();
                     Session["role_id"] = response[0].role_id;
                     return View("../Home/Index");
                 }

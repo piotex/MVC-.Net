@@ -33,6 +33,7 @@
                     }
                     if (Session["role_id"].ToString() == "3")
                     {
+                        <li>@Html.ActionLink("Products", "Index", "Products") </li>
                         <li>@Html.ActionLink("Log out", "LogOut", "LogIn")</li>
                     }
                 }
