@@ -159,6 +159,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\InputValidationHelpers.cs" />
+    <Compile Include="Models\DbModels\DbModelJoin_Products.cs" />
     <Compile Include="Models\DbModels\DbModel_Categories.cs" />
     <Compile Include="Models\DbModels\DbModel_Products.cs" />
     <Compile Include="Models\DbModels\DbModel_Users.cs" />

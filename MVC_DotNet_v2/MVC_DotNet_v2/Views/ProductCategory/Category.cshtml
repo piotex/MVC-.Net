@@ -1,13 +1,11 @@
-﻿@model MVC_DotNet_v2.Models.DbModels.DbModel_Products
+﻿@model MVC_DotNet_v2.Models.DbModels.DbModel_Categories
 
 <tr>
-    @using (Html.BeginForm("ChangeProduct", "Products", FormMethod.Post))
+    @using (Html.BeginForm("ChangeCategory", "ProductCategory", FormMethod.Post))
     {
         @Html.HiddenFor(m => m.id)
-        <td>@Html.TextBoxFor(m => m._quantity_)</td>
-        <td>@Html.TextBoxFor(m => m._type_)</td>
-        <td>@Html.TextBoxFor(m => m._name_)</td>
-        <td>@Html.TextBoxFor(m => m._price_)</td>
+        <td>@Html.TextBoxFor(m => m.categorie_id)</td>
+        <td>@Html.TextBoxFor(m => m.categorie_name)</td>
         <td><button type="submit">Save</button></td>
     }
 </tr>

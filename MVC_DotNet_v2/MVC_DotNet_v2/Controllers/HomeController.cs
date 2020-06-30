@@ -12,6 +12,7 @@ namespace MVC_DotNet_v2.Controllers
     {
         public ActionResult Index()
         {
+            Session["role_id"] = 2;     //pamietać żeby przed commitem to usunać!!!
             return View();
         }
 
