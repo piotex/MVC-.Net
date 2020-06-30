@@ -1,0 +1,14 @@
+﻿@model MVC_DotNet_v2.Models.DbModels.DbModel_Products
+
+<tr>
+    @using (Html.BeginForm("ChangeBasket", "User", FormMethod.Post))
+    {
+        <input type="hidden" name="id" id="id" value="@Model.id" />
+        <td><input type="text" name="_name_" id="_name_" value="@Model._name_" readonly /></td>
+        <td><input type="text" name="_price_" id="_price_" value="@Model._price_" readonly /></td>
+        <td><input type="text" name="_quantity_" id="_quantity_" value="@Model._quantity_" /></td>
+
+        <td><input type="submit" value="Change" /></td>
+    }
+</tr>
+

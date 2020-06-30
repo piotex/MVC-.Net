@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_DotNet_v2.Models.DbModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,7 +13,9 @@ namespace MVC_DotNet_v2.Controllers
     {
         public ActionResult Index()
         {
-            Session["role_id"] = 3;     //pamietać żeby przed commitem to usunać!!!
+            Session["role_id"] = 3;                                 //pamietać żeby przed commitem to usunać!!!
+            Session["basket"] = new List<DbModel_Products>();       // to też
+
             return View();
         }
 
