@@ -13,8 +13,8 @@ namespace MVC_DotNet_v2.Controllers
     {
         public ActionResult Index()
         {
-            Session["role_id"] = 3;                                 //pamietać żeby przed commitem to usunać!!!
-            Session["basket"] = new List<DbModel_Products>();       // to też
+            //Session["role_id"] = 3;                                 //pamietać żeby przed commitem to usunać!!!
+            //Session["basket"] = new List<DbModel_Products>();       // to też
 
             return View();
         }
